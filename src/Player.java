@@ -12,6 +12,14 @@ class Player
 {
 	public static void main(String args[])
 	{
+		//
+		//	Two solutions
+		//
+		solution1Standard();
+		//solution2ObjectOriented();
+	}
+	public static void solution1Standard()
+	{
 		Scanner inputScanner = new Scanner(System.in);
 		//
 		//	game loop
@@ -27,10 +35,42 @@ class Player
 			{
 				System.out.println(enemyTarget1Name);
 			}
-			else 
+			else
 			{
 				System.out.println(enemyTarget2Name);
 			}
 		}
 	}
+	public static void solution2ObjectOriented()
+	{
+		Scanner inputScanner = new Scanner(System.in);
+		//
+		//	game loop
+		//
+		while(true)
+		{
+			Enemy enemy1 = new Enemy();
+			enemy1.Name = inputScanner.next();
+			enemy1.Distance = inputScanner.nextInt();
+
+			Enemy enemy2 = new Enemy();
+			enemy2.Name = inputScanner.next();
+			enemy2.Distance = inputScanner.nextInt();
+
+			if(enemy1.Distance < enemy2.Distance)
+			{
+				System.out.println(enemy1.Name);
+			}
+			else
+			{
+				System.out.println(enemy1.Name);
+			}
+		}
+	}
+}
+
+class Enemy
+{
+	String Name;
+	int Distance;
 }
